@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block headersection %}
+
+<section class="header-container">
+  <img class="profile-image" src="{{ url_for('static', filename='assets/DP.JPEG') }}" alt="" />
+
+  <div class="content-text">
+    <h2>This is what I look like</h2>
+</section>
+{% endblock %}
+
+{% block body %}
+<section id="projects" class="project-container container">
+    <h1 class="text-secondary" align="">About Me</h1>
+    <hr />
+    <br>
+    <p>
+        I'm a highly skilled Python web developer with a strong background in web development, API development, deployment, and database management. With a passion for building efficient and scalable web applications, I've acquired extensive experience in the field, ensuring optimal user experiences and seamless functionality.
+        After completing their studies in Computer Science <br>
+        I began my career as a Python developer and quickly developed a keen interest in web development. I possess in-depth knowledge of Python web frameworks such as Django and Flask, which I leverage to create robust and feature-rich web applications.
+        <br>
+        I'm proficient in developing RESTful APIs using Python, enabling seamless communication between the front-end and back-end components of web applications. I have experience in designing API architectures, implementing authentication and authorization mechanisms, and ensuring efficient data transfer through JSON or XML.
+        <br>
+        Moreover, I'm well-versed in deploying web applications, employing various deployment methodologies and tools to ensure efficient and reliable deployment processes. I have expertise in containerization technologies like Docker, enabling them to package applications with their dependencies and deploy them across different environments. I've also skilled in using cloud platforms such as Amazon Web Services (AWS) or Google Cloud Platform (GCP) to deploy applications and manage scalable infrastructure.
+        <br>
+        Database management is another area of my strength. I have extensive experience in working with both relational databases, such as MySQL and PostgreSQL, as well as NoSQL databases like MongoDB. I can design and optimize database schemas, write efficient queries, and ensure data integrity and security.
+        
+        Throughout their career, I've collaborated with multidisciplinary teams, including designers, front-end developers, and project managers. 
+        <br>
+        I possess excellent communication skills and can effectively translate business requirements into technical solutions, ensuring smooth project delivery.
+        
+        Continuously staying up-to-date with the latest advancements in web development, I'm always eager to learn and adopt emerging technologies and frameworks. I have a solid understanding of front-end technologies such as HTML, CSS, and JavaScript, which allows them to collaborate seamlessly with front-end developers to create intuitive user interfaces.
+        
+    </p>
+    <br>
+    <br>
+    <hr />
+    <br>
+    <p>This Portfolio Website is also developed using Flask &#128512; </p>
+</section>
+{% endblock %}

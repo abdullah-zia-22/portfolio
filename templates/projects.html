@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!-- Projects -->
+<section id="projects" class="project-container container">
+    <div class="content-text">
+        <h2>Work Portfolio</h2>
+    </div>
+
+    <article class="project">
+        {% for card in cards %}
+        <div class="textcard">
+            <div class="container">
+                <h3>{{card.name}}</h3>
+                <br>
+                <p>{{card.description}}</p>
+            </div>
+        </div>
+
+        {% endfor %}
+    </article>
+</section>
+{% endblock %}
