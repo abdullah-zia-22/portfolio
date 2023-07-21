@@ -110,8 +110,7 @@ h2::selection {
 
 /* Project cards */
 .card {
-  padding: 1rem;
-  color: #ffffff;
+  padding: 2rem;
   border-radius: 5px;
   transition: 0.4s ease-in-out;
   cursor: pointer;
