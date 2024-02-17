@@ -9,8 +9,8 @@
 /* variables */
 :root {
   /* Colors */
-  --primary-color: #ffcd42;
-  --secondary-color: #ffd35c;
+  --primary-color: #222222;
+  --secondary-color: #626b67;
   --bg-primary: #ffffff;
   --text-color: #222222;
   --text-color-two: #ffffff;
@@ -32,8 +32,8 @@
 }
 
 [data-theme="dark"] {
-  --primary-color: #ffcd42;
-  --secondary-color: #ffd35c;
+  --primary-color: #626b67;
+  --secondary-color: #626b67;
   --bg-primary: #000000;
   --text-color: #ffffff;
   --text-color-two: #222222;
@@ -110,6 +110,7 @@ body {
 
 .navbar .btn {
   margin-right: 1.5rem;
+  color:#ffffff;
 }
 
 .fas.fa-arrow-right {

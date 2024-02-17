@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 def get_projects():
     cursor,db=MySqlDatabase.connection()
-    cursor.execute("SELECT * from projects;")
+    cursor.execute("SELECT * from projects order by id desc;")
     cards_list=cursor.fetchall()
     MySqlDatabase.close_connection(cursor,db)
     return cards_list
