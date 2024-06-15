@@ -41,6 +41,18 @@
   --card-background: #111111;
   --bg-secondary-two: #f4f4f4;
   --shadow: 0 2px 10px rgba(95, 95, 95, 0.2);
+
+  /* Add this section */
+  table, th, td {
+    border: 1px solid #ffffff; /* White border for table lines in dark mode */
+  }
+  .btn {
+    background-color: var(--primary-color); /* Use the primary color for button background */
+    color: var(--text-color); /* Set text color to white */
+  }
+  .github-icon {
+    filter: invert(1);
+  }
 }
 
 html {

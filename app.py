@@ -1,16 +1,14 @@
 from flask import Flask, render_template
-from db import MySqlDatabase
+import json
 
 # create flask app
 app = Flask(__name__)
 
 
 def get_projects():
-    cursor,db=MySqlDatabase.connection()
-    cursor.execute("SELECT * from projects order by id desc;")
-    cards_list=cursor.fetchall()
-    MySqlDatabase.close_connection(cursor,db)
-    return cards_list
+    with open('static/assets/projects.json', 'r') as file:
+            projects = json.load(file)
+    return projects['projects']
 
 
 @app.errorhandler(Exception)

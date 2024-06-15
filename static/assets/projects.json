@@ -1,0 +1,64 @@
+{
+    "projects": [
+        {
+            "name": "Instagram Comments Filtering",
+            "description": "Final Year Project, developed Chrome extension which hides the aggressive comments on instagram.com website in real-time using Custom API developed using TensorFlow, NLTK, NLP and Flask REST API.",
+            "url": "https://github.com/abdullah-zia-22/InstagramCommentsFiltering"
+        },
+        {
+            "name": "Sentimantle",
+            "description": "Flask REST API for a sentiment analysis project having complex database and queries. Authentication and authorization using JWT. Multiple features like Data addition via File Upload, File Download, Database Views and Stored Procedures. Like the project name says, Sentimantle, it creates a report of a certain aspect of a location and perform sentiment analysis on it's respective aspects.",
+            "url": null
+        },
+        {
+            "name": "OCR AWS Lambda",
+            "description": "Developed a robust OCR solution in Python using AWS services like Lambda, S3, Docker, and ECR. The goal was to extract text from PDFs in S3 buckets for downstream processing. A Lambda function triggered by new PDF uploads used a custom Docker container in ECR with OCR libraries to extract text with high accuracy. The results were stored in another S3 bucket or integrated with other AWS services for further processing, all within an automated workflow, reducing manual intervention and processing time.",
+            "url": null
+        },
+        {
+            "name": "AWS Lambda REST API",
+            "description": "Developed a Flask-based REST API and utilized AWS Lambda with Amazon API Gateway for deployment, all while seamlessly integrating a MySQL database. API had JWT authentication. This architecture resulted in a dynamic API that efficiently managed user interactions. By combining Flask flexibility with AWS Lambda serverless power and API Gateway management capabilities, I created a high-performance solution that showcased my skills in web development and cloud integration.",
+            "url": "https://github.com/abdullah-zia-22/FastAPI-AWS-Lambda"
+        },
+        {
+            "name": "Azure Functions REST API",
+            "description": "Designed and developed a robust system using Flask to create a RESTful API, seamlessly connected to a MySQL database. The unique aspect of this project was its integration with Azure Functions, enabling automatic scaling and event-driven execution. This combination of Flask, MySQL, and Azure Functions delivered a scalable, high-performing solution. The project showcased my expertise in web development and leveraging cloud services for enhanced functionality.",
+            "url": null
+        },
+        {
+            "name": "Multi-Vendor Store",
+            "description": "REST API Having JWT authentication, invoice generation, images upload, transaction management like Daraz using Flask Restful Framework.",
+            "url": null
+        },
+        {
+            "name": "WebSockets",
+            "description": "WebSocket connections to periodically send updates of data in database to clients, and sends immediate notifications whenever new data is added. It ensures only the latest request is processed by canceling any ongoing tasks before starting new ones.",
+            "url": null
+        },
+        {
+            "name": "EKL",
+            "description": "Elastic Search implementation (Realtime fast searching) in Webapp on large MySQL database using EKL stack. EKL stack is also used by Google for searching. Elastic Search uses document type NoSQL database, to perform modern search and analytics engine which is based on Apache Lucene. It uses it's own indexing and mappings. After indexing, elasticsearch will create several inverted indices tables, which makes it super fast for searching. Developed logstash data pipeline to ingests data from MySQL, transforms it, and then send it to my ES Index.",
+            "url": null
+        },
+        {
+            "name": "SnowFlake",
+            "description": "Data warehousing, fetching and updating large data.",
+            "url": null
+        },
+        {
+            "name": "Third-party API",
+            "description": "Integration of third party API's such as OpenAI, ShotStack, StoryBlocks in backend.",
+            "url": null
+        },
+        {
+            "name": "CI/CD",
+            "description": "GitHub Action automates the Continuous Integration and Continuous Deployment (CI/CD) pipeline for deploying a Python application to an EC2 instance. It triggers on pushes to the main branch, sets up Python, configures SSH keys, and deploys the application to the specified EC2 host, updating it with the latest code from the repository. The action also sets up the necessary environment, database, and systemd service, and configures Nginx as a reverse proxy for the application.",
+            "url": "https://github.com/abdullah-zia-22/ci-cd-flask-api"
+        },
+        {
+            "name": "LocalAI",
+            "description": "Developed a local LLM chatbot API using LocalAI framework. LocalAI act as a drop-in replacement REST API that’s compatible with OpenAI API specifications for local inferencing. It allows you to run LLMs, generate images, audio (and not only) locally or on-prem with consumer grade hardware, supporting multiple model families and architectures. I used a publicly available LLM on huggingface.",
+            "url": null
+        }
+    ]
+}
