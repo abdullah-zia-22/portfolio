@@ -1,12 +1,14 @@
 from flask import Flask, render_template
 import json
+import os
 
 # create flask app
 app = Flask(__name__)
 
 
 def get_projects():
-    with open('static/assets/projects.json', 'r') as file:
+    file_path = os.path.join('api','static', 'assets', 'projects.json')
+    with open(file_path, 'r') as file:
             projects = json.load(file)
     return projects['projects']
 
