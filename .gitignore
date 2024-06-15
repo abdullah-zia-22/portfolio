@@ -269,3 +269,4 @@ cython_debug/
 
 *migrations*
 .env
+.vercel

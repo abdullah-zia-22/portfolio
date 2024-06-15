@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,send_file
 import json
 import os
 
@@ -44,3 +44,7 @@ def contact_page():
 @app.route('/projects')
 def projects_page():
     return render_template('projects.html', title="Projects", cards=get_projects())
+
+@app.route('/resume')
+def resume():
+    return send_file("static/assets/Muhammad Abdullah Web.pdf", as_attachment=True)
