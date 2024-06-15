@@ -12,4 +12,4 @@ Light and Dark Theme Personal Portfolio Website written using Flask Framework in
     - Python (Flask)
     - MySQL
 
-  URL: https://portfolio-wf8j.onrender.com/
+  URL: https://portfolio-abdullah-zia.vercel.app
