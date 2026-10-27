@@ -1,182 +1,166 @@
 {% extends 'base.html' %}
 
 {% block headersection %}
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <h1>Muhammad Abdullah</h1>
+      <p class="hero-role">Senior Software Engineer</p>
+      <p class="hero-lede">
+        I have 4+ years of experience building full-stack and backend systems in Python,
+        from REST APIs and third-party integrations to production LLM features, deployed
+        with Docker and CI/CD on AWS, GCP and Azure.
+      </p>
+      <div class="hero-actions">
+        <a href="{{ url_for('contact_page') }}" class="btn btn-primary">Connect with me</a>
+        <a href="{{ url_for('projects_page') }}" class="btn btn-secondary">See projects</a>
+      </div>
+    </div>
 
-<section class="header-container">
-  <img class="profile-image" src="https://avatars.githubusercontent.com/u/82393213?v=4" alt="" />
-  <h1>Hey Visitor! I'm Muhammad Abdullah</h1>
-
-  <div class="content-text">
-    <h2>Python Backend Developer</h2>
-    <p>
-      Expertise in Python, Django, FastAPI, Flask, RESTful APIs and DevOps
-    </p>
+    <figure class="api-panel" aria-label="A summary of my skills written as an API response">
+      <div class="api-bar">
+        <span><span class="api-method">GET</span> /developers/muhammad-abdullah</span>
+        <span class="api-status">200 OK</span>
+      </div>
+<pre><code>{
+  <span class="k">"name"</span>: <span class="s">"Muhammad Abdullah"</span>,
+  <span class="k">"role"</span>: <span class="s">"Senior Software Engineer"</span>,
+  <span class="k">"experience"</span>: <span class="s">"4+ years"</span>,
+  <span class="k">"backend"</span>: [<span class="s">"Django"</span>, <span class="s">"FastAPI"</span>, <span class="s">"Flask"</span>, <span class="s">"Celery"</span>],
+  <span class="k">"frontend"</span>: [<span class="s">"React"</span>, <span class="s">"Next.js"</span>, <span class="s">"TypeScript"</span>],
+  <span class="k">"ai"</span>: [<span class="s">"LLM integration"</span>, <span class="s">"LangChain"</span>, <span class="s">"NLP"</span>],
+  <span class="k">"data"</span>: [<span class="s">"PostgreSQL"</span>, <span class="s">"MySQL"</span>, <span class="s">"Redis"</span>],
+  <span class="k">"cloud"</span>: [<span class="s">"AWS"</span>, <span class="s">"GCP"</span>, <span class="s">"Azure"</span>]
+}</code></pre>
+    </figure>
   </div>
-  <a href="{{ url_for('contact_page') }}" class="btn btn-secondary">Connect With Me</a>
 </section>
 {% endblock %}
 
 {% block body %}
-<section id="projects" class="project-container container">
-  <div class="division"></div>
-
-  <div class="content-text">
-    <h2>Skills</h2>
-    <div class="scroll-container">
-      <table style="text-align: center;">
-        <tr>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
-              <h4>Python</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img class="github-icon" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Framework/flask.svg"
-              alt="Flask" width="50" height="50">
-              <h4>Flask</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 15px;">
-              <img src="https://cdn.worldvectorlogo.com/logos/django.svg"
-              alt="Django" width="50" height="50">
-              <h4>Django</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://repository-images.githubusercontent.com/260928305/92388600-8d1c-11ea-9993-a726466b5099"
-              alt="FastAPI" width="100" height="100">
-              <h4>FastAPI</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/mysqlworkbench.svg"
-              alt="MySQL" width="55" height="55">
-              <h4>MySQL</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Database/postgresql.svg"
-              alt="PostgreSQL" width="55" height="55">
-              <h4>PostgreSQL</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Database/elasticsearch.svg"
-              alt="EKL" width="55" height="55">
-              <h4>EKL</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Devops/aws.svg"
-              alt="AWS" width="55" height="55">
-              <h4>AWS</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Devops/gcp.svg"
-              alt="GCP" width="55" height="55">
-              <h4>GCP</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/BaaS/heroku.svg"
-              alt="Heroku" width="55" height="55">
-              <h4>Heroku</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/BackendDevelopment/nginx.svg"
-              alt="Nginx" width="55" height="55">
-              <h4>Nginx</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Devops/docker.svg"
-              alt="docker" width="55" height="55">
-              <h4>Docker</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img class="github-icon"  src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Devops/bash.svg"
-              alt="bash" width="55" height="55">
-              <h4>Bash</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg"
-              alt="git" width="55" height="55">
-              <h4>Git</h4>
-            </div>
-          </td>
-          <td  style="padding: 20px;">
-            <div class="textcard"  style="padding: 20px;">
-              <img class="github-icon" src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-              alt="GitHub" width="55" height="55">
-              <h4>GitHub</h4>
-            </div>
-          </td>
-        </tr>
-      </table>
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-head">
+      <h2>Skills</h2>
+      <p>The tools I use day to day.</p>
     </div>
-    <div class="arrow-container">
+
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h3>Languages</h3>
+        <ul class="chips">
+          <li class="chip">Python</li>
+          <li class="chip">TypeScript</li>
+          <li class="chip">JavaScript</li>
+          <li class="chip">HTML</li>
+          <li class="chip">Bash</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Frameworks</h3>
+        <ul class="chips">
+          <li class="chip">Django</li>
+          <li class="chip">Flask</li>
+          <li class="chip">FastAPI</li>
+          <li class="chip">Celery</li>
+          <li class="chip">React</li>
+          <li class="chip">Next.js</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>APIs and integrations</h3>
+        <ul class="chips">
+          <li class="chip">REST APIs</li>
+          <li class="chip">OAuth</li>
+          <li class="chip">Stripe</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>AI and LLMs</h3>
+        <ul class="chips">
+          <li class="chip">LLM integration</li>
+          <li class="chip">LangChain</li>
+          <li class="chip">NLP</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Databases</h3>
+        <ul class="chips">
+          <li class="chip">MySQL</li>
+          <li class="chip">PostgreSQL</li>
+          <li class="chip">NoSQL</li>
+          <li class="chip">Redis</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>DevOps and cloud</h3>
+        <ul class="chips">
+          <li class="chip">Docker</li>
+          <li class="chip">CI/CD</li>
+          <li class="chip">GitHub Actions</li>
+          <li class="chip">Azure DevOps</li>
+          <li class="chip">AWS</li>
+          <li class="chip">GCP</li>
+          <li class="chip">Azure</li>
+          <li class="chip">Nginx</li>
+          <li class="chip">Heroku</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Monitoring</h3>
+        <ul class="chips">
+          <li class="chip">ELK Stack</li>
+          <li class="chip">System monitoring</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Version control</h3>
+        <ul class="chips">
+          <li class="chip">Git</li>
+          <li class="chip">GitHub</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-
-<!-- Projects -->
-<section id="projects" class="project-container container">
-  <div class="division"></div>
-
-  <div class="content-text">
-    <h2>Popular Project</h2>
-    <p>Check out some of my projects</p>
-  </div>
-
+<section class="section" id="featured">
   <div class="container">
-    <div class="textcard">
-      <table>
-        <tr>
-          <td>
-            <div class="container">
-              <h3>Sentimantle</h3>
-              <p style="text-align: justify;">Flask REST API for a sentiment analysis project having
-                complex database and queries. Authentication and authorization using JWT. Multiple features like Data addition via
-                File Upload, File Download, Database Views and Stored Procedures.
-                <br>
-                Like the project name says, Sentimantle, it creates a report of a certain aspect of a location and perform sentiment analysis on it's respective aspects</p>
-            </div>
-          </td>
-          <td>
-            <div class="container">
-              <h3>EKL</h3>
-              <p style="text-align: justify;">Elastic Search implementation (Realtime fast searching)
-                in Webapp on large MySQL database using EKL stack. EKL stack is also used by Google
-                for searching. 
-                Elastic Search uses document type NoSQL database, to perform modern search and analytics engine which is based on Apache Lucene.
-                It uses it's own indexing and mappings. After indexing, elasticsearch will create several inverted indices tables, which makes it super fast for searching
-                <br>
-                Developed logstash data pipeline to ingests data from MySQL, transforms it, and then send it to my ES Index</p>
-            </div>
-          </td>
-        </tr>
-      </table>
+    <div class="section-head">
+      <h2>Popular projects</h2>
+      <a class="text-link" href="{{ url_for('projects_page') }}">See all projects</a>
+    </div>
+
+    <div class="feature-grid">
+      <article class="project-card">
+        <h3>Sentimantle</h3>
+        <p>
+          A Flask REST API that builds a report on a chosen aspect of a location and runs
+          sentiment analysis on it. It uses a complex database with views and stored
+          procedures, JWT authentication and authorization, and supports data upload
+          and download through files.
+        </p>
+        <ul class="chips">
+          <li class="chip">Flask</li>
+          <li class="chip">JWT</li>
+          <li class="chip">SQL</li>
+        </ul>
+      </article>
+
+      <article class="project-card">
+        <h3>Elasticsearch on MySQL</h3>
+        <p>
+          Real-time search for a web app backed by a large MySQL database, built on the ELK
+          stack. I wrote the Logstash pipeline that ingests data from MySQL, transforms it
+          and sends it to an Elasticsearch index, where inverted indices keep queries fast.
+        </p>
+        <ul class="chips">
+          <li class="chip">Elasticsearch</li>
+          <li class="chip">Logstash</li>
+          <li class="chip">MySQL</li>
+        </ul>
+      </article>
     </div>
   </div>
-  <a href="{{url_for('projects_page')}}" class="btn btn-secondary">See More <i class="fas fa-arrow-right"></i></a>
 </section>
 {% endblock %}

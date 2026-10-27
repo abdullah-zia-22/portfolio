@@ -1,60 +1,52 @@
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+(function () {
+  var root = document.documentElement;
+  var themeToggle = document.getElementById('theme-toggle');
+  var menuToggle = document.querySelector('.nav-toggle');
+  var menu = document.getElementById('nav-menu');
 
-hamburger.addEventListener("click", mobileMenu);
-
-function mobileMenu() {
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
-}
-
-// Close navbar when link is clicked
-const navLink = document.querySelectorAll(".nav-link");
-
-navLink.forEach((n) => n.addEventListener("click", closeMenu));
-
-function closeMenu() {
-  hamburger.classList.remove("active");
-  navMenu.classList.remove("active");
-}
-
-// Event Listeners: Handling toggle event
-const toggleSwitch = document.querySelector(
-  '.theme-switch input[type="checkbox"]'
-);
-
-function switchTheme(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
+  /* ---- Theme ---- */
+  function applyTheme(theme, save) {
+    root.setAttribute('data-theme', theme);
+    if (themeToggle) themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
+    if (save) {
+      try { localStorage.setItem('theme', theme); } catch (e) {}
+    }
   }
-}
 
-toggleSwitch.addEventListener("change", switchTheme, false);
+  applyTheme(root.getAttribute('data-theme') || 'light', false);
 
-//  Store color theme for future visits
-
-function switchTheme(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "dark"); //add this
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-    localStorage.setItem("theme", "light"); //add this
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark', true);
+    });
   }
-}
 
-// Save user preference on load
-
-const currentTheme = localStorage.getItem("theme")
-  ? localStorage.getItem("theme")
-  : null;
-
-if (currentTheme) {
-  document.documentElement.setAttribute("data-theme", currentTheme);
-
-  if (currentTheme === "dark") {
-    toggleSwitch.checked = true;
+  /* ---- Mobile menu ---- */
+  function setMenu(open) {
+    if (!menu || !menuToggle) return;
+    menu.classList.toggle('active', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   }
-}
+
+  if (menuToggle && menu) {
+    menuToggle.addEventListener('click', function () {
+      setMenu(!menu.classList.contains('active'));
+    });
+
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setMenu(false);
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('active')) {
+        setMenu(false);
+        menuToggle.focus();
+      }
+    });
+
+    window.matchMedia('(min-width: 761px)').addEventListener('change', function (e) {
+      if (e.matches) setMenu(false);
+    });
+  }
+})();
