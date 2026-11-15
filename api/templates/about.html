@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<section class="section">
+<section class="section about-page">
   <div class="container about-grid">
     <img class="about-photo" src="{{ url_for('static', filename='assets/DP.jpeg') }}" alt="Portrait of Muhammad Abdullah" width="280" height="350" />
 
@@ -21,7 +21,7 @@
 
       <h2>AI and LLM integration</h2>
       <p>
-        I've integrated LLMs into production systems using LangChain and NLP techniques. I also
+        I've integrated LLMs into production systems using LangChain, tool calling, RAG's and NLP techniques. I also
         use the ELK Stack for system monitoring.
       </p>
 
@@ -48,4 +48,6 @@
     </div>
   </div>
 </section>
+
+{% include 'partials/technology_logos.html' %}
 {% endblock %}

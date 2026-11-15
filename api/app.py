@@ -13,6 +13,21 @@ def get_projects():
     return projects['projects']
 
 
+def get_featured_projects():
+    featured_names = [
+        'CLARA — AI-Powered Recruitment and Candidate Assessment Platform',
+        'Sentimantle — Hotel Review Intelligence Platform',
+        'Gift Marketplace',
+    ]
+    projects_by_name = {project['name']: project for project in get_projects()}
+    featured_projects = []
+    for name in featured_names:
+        project = projects_by_name[name]
+        paragraphs = project['description'].split('\n\n')
+        featured_projects.append({**project, 'summary': paragraphs[1]})
+    return featured_projects
+
+
 @app.errorhandler(Exception)
 def handle_exception(message):
     return render_template('error.html', message="Bad Request"), 400
@@ -25,7 +40,11 @@ def err_404(message):
 
 @app.route('/')
 def main_page():
-    return render_template('index.html', title='Muhammad Abdullah - Homepage')
+    return render_template(
+        'index.html',
+        title='Muhammad Abdullah - Homepage',
+        featured_projects=get_featured_projects(),
+    )
 
 
 @app.route('/home')

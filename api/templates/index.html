@@ -7,9 +7,13 @@
       <h1>Muhammad Abdullah</h1>
       <p class="hero-role">Senior Software Engineer</p>
       <p class="hero-lede">
-        I have 4+ years of experience building full-stack and backend systems in Python,
-        from REST APIs and third-party integrations to production LLM features, deployed
-        with Docker and CI/CD on AWS, GCP and Azure.
+        I’m a Senior Software Engineer specializing in Python backend development, AI-powered systems, and scalable web applications.  
+        I build production-grade APIs, microservices, and full-stack applications using FastAPI, Django, Flask, React, Next.js, and TypeScript.  
+        I specialize in designing secure RESTful APIs, authentication systems, and scalable backend architectures.  
+        My AI engineering experience includes LLM-powered applications, RAG pipelines, and intelligent data platforms.  
+        I work with Docker and cloud platforms including AWS, Azure, and GCP for deployment and infrastructure management.  
+        I have strong database experience with PostgreSQL, MySQL, and MongoDB, focusing on performance, scalability, and data integrity.  
+        I enjoy collaborating with cross-functional teams to transform ideas into reliable, efficient, and maintainable software products.
       </p>
       <div class="hero-actions">
         <a href="{{ url_for('contact_page') }}" class="btn btn-primary">Connect with me</a>
@@ -38,6 +42,7 @@
 {% endblock %}
 
 {% block body %}
+{% include 'partials/technology_logos.html' %}
 <section class="section" id="skills">
   <div class="container">
     <div class="section-head">
@@ -81,6 +86,9 @@
           <li class="chip">LLM integration</li>
           <li class="chip">LangChain</li>
           <li class="chip">NLP</li>
+          <li class="chip">RAG</li>
+          <li class="chip">Tool Calling</li>
+          <li class="chip">MCP</li>
         </ul>
       </div>
       <div class="skill-group">
@@ -124,6 +132,44 @@
   </div>
 </section>
 
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-head">
+      <h2>Professional experience</h2>
+    </div>
+
+    <div class="experience-grid">
+      <article class="experience-card">
+        <div class="experience-meta">
+          <span class="experience-company">True Meridian</span>
+          <span class="experience-location">Islamabad</span>
+        </div>
+        <h3>Senior Python Developer</h3>
+        <p class="experience-period">Apr 2024 – Present</p>
+        <ul class="experience-points">
+          <li>Built and maintained production backend services using Django and FastAPI with improved stability and scalable architecture.</li>
+          <li>Designed and integrated LLM-powered services into backend systems to improve efficiency, scalability, and automation.</li>
+          <li>Developed microservices-based architectures for distributed systems, improving fault isolation and service maintainability.</li>
+        </ul>
+      </article>
+
+      <article class="experience-card">
+        <div class="experience-meta">
+          <span class="experience-company">Codeaza Technologies</span>
+          <span class="experience-location">Rawalpindi</span>
+        </div>
+        <h3>Backend Lead → Senior Python Developer → Junior Python Developer</h3>
+        <p class="experience-period">Jan 2022 – Apr 2024</p>
+        <ul class="experience-points">
+          <li>Led a team of 3–6 developers, managing sprint planning, task allocation, code reviews, and execution to improve delivery efficiency by approximately 20–30%.</li>
+          <li>Designed and optimized scalable backend systems and REST APIs with Python, Flask, and Django, improving response times by up to 40% through query optimization and indexing.</li>
+          <li>Implemented secure OAuth 2.0 and JWT-based authentication and authorization while deploying applications on AWS, GCP, Heroku, and VPS environments.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="featured">
   <div class="container">
     <div class="section-head">
@@ -132,34 +178,12 @@
     </div>
 
     <div class="feature-grid">
+      {% for card in featured_projects %}
       <article class="project-card">
-        <h3>Sentimantle</h3>
-        <p>
-          A Flask REST API that builds a report on a chosen aspect of a location and runs
-          sentiment analysis on it. It uses a complex database with views and stored
-          procedures, JWT authentication and authorization, and supports data upload
-          and download through files.
-        </p>
-        <ul class="chips">
-          <li class="chip">Flask</li>
-          <li class="chip">JWT</li>
-          <li class="chip">SQL</li>
-        </ul>
+        <h3>{{ card.name }}</h3>
+        <p>{{ card.summary }}</p>
       </article>
-
-      <article class="project-card">
-        <h3>Elasticsearch on MySQL</h3>
-        <p>
-          Real-time search for a web app backed by a large MySQL database, built on the ELK
-          stack. I wrote the Logstash pipeline that ingests data from MySQL, transforms it
-          and sends it to an Elasticsearch index, where inverted indices keep queries fast.
-        </p>
-        <ul class="chips">
-          <li class="chip">Elasticsearch</li>
-          <li class="chip">Logstash</li>
-          <li class="chip">MySQL</li>
-        </ul>
-      </article>
+      {% endfor %}
     </div>
   </div>
 </section>

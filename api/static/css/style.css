@@ -262,6 +262,66 @@ p { margin: 0 0 1rem; }
 .page-head h1 { margin: 0 0 0.75rem; font-size: clamp(2.25rem, 6vw, 3.5rem); letter-spacing: -0.03em; }
 .page-head p { color: var(--muted); }
 
+/* Animated technology logos */
+.tech-section .section-head { border-bottom: 0; padding-bottom: 0; }
+.tech-section .section-head > div { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1.5rem; }
+
+.logo-marquee {
+  position: relative;
+  overflow: hidden;
+  padding: 0.35rem 0;
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+
+.logo-marquee + .logo-marquee { margin-top: 0.85rem; }
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  animation: logo-marquee 42s linear infinite;
+}
+
+.logo-marquee-reverse .logo-track { animation-direction: reverse; animation-duration: 48s; }
+.logo-marquee:hover .logo-track { animation-play-state: paused; }
+
+.logo-list {
+  display: flex;
+  flex: none;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0 0.425rem;
+  list-style: none;
+}
+
+.tech-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 64px;
+  padding: 0.75rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.tech-logo:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 12px 24px -20px var(--accent);
+}
+
+.tech-logo img { width: 28px; height: 28px; object-fit: contain; }
+[data-theme="dark"] .tech-logo-icon-invert { filter: invert(1); }
+
+@keyframes logo-marquee {
+  to { transform: translateX(-50%); }
+}
+
 /* Skills */
 .skill-groups {
   display: grid;
@@ -288,12 +348,75 @@ p { margin: 0 0 1rem; }
   font-size: 0.9rem;
 }
 
+/* Experience */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.experience-card {
+  padding: clamp(1.4rem, 3vw, 1.9rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  box-shadow: 0 18px 30px -28px rgba(18, 23, 42, 0.28);
+}
+
+.experience-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.experience-company { color: var(--ink); }
+.experience-period {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.experience-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  letter-spacing: -0.01em;
+}
+
+.experience-points {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+.experience-points li + li { margin-top: 0.65rem; }
+
 /* Project cards */
 .feature-grid,
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
+}
+
+.feature-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+
+.project-grid {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  max-width: 900px;
+  margin-inline: auto;
 }
 
 .project-card {
@@ -332,6 +455,19 @@ p { margin: 0 0 1rem; }
   object-fit: cover;
   border-radius: 20px;
   border: 1px solid var(--line);
+}
+
+.about-page .about-photo { animation: about-enter-left 700ms ease-out both; }
+.about-page .prose { animation: about-enter-right 700ms 120ms ease-out both; }
+
+@keyframes about-enter-left {
+  from { opacity: 0; transform: translateX(-18px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes about-enter-right {
+  from { opacity: 0; transform: translateX(18px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .prose { max-width: 66ch; }
@@ -444,6 +580,7 @@ p { margin: 0 0 1rem; }
 
   .brand span { font-size: 1rem; }
 
+  .experience-grid,
   .feature-grid,
   .project-grid { grid-template-columns: minmax(0, 1fr); }
 }
